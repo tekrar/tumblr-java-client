@@ -9,4 +9,5 @@ public class UserContext {
 		this.password = password;
 		this.email = email;
 	}
+	public boolean isValid() {return name != null && password != null && email != null;}
 }
