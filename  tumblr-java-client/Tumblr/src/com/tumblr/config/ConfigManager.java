@@ -10,7 +10,7 @@ public class ConfigManager
 	private static volatile ConfigManager instance = null;
 	private static String PROPERTIES_FILE_NAME = "tumblr.properties";
 	public static String LOGIN_EMAIL_PROP = "loginEmail";
-	public static String LOGIN_USER_PROP = "loginUser";
+	public static String HOST_URL_PROP = "hostURL";
 	public static String LOGIN_PASSWORD_PROP = "loginPassword";
 	
 
@@ -79,6 +79,6 @@ public class ConfigManager
     {
     	System.out.println(ConfigManager.getInstance().getProperty(LOGIN_EMAIL_PROP));
     	System.out.println(ConfigManager.getInstance().getProperty(LOGIN_PASSWORD_PROP));
-    	System.out.println(ConfigManager.getInstance().getProperty(LOGIN_USER_PROP));
+    	System.out.println(ConfigManager.getInstance().getProperty(HOST_URL_PROP));
     }
 }

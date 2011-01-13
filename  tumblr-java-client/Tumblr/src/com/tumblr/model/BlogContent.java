@@ -31,7 +31,7 @@ public class BlogContent
 		res.append("Post cnt: " + postCnt + "\n");
 		
 		for (Post p : posts.values()) {
-			res.append(p.id + " " + p.title + "\n" + p.body + "\n\n");
+			res.append(p);
 		}
 		return res.toString();
 	}

@@ -16,4 +16,9 @@ public class Post
 	{
 		this(title,body,type,null);
 	}
+	
+	public String toString()
+	{
+		return id + " " + title + "\n" + body + "\n\n";
+	}
 }
