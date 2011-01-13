@@ -25,14 +25,14 @@ import com.tumblr.wrapper.XMLParser;
 public class Connector 
 {
 	public static String POST_URL = "http://tumblr.com/api/write";
-	public static String GET_URL = "";
+	public static String GET_URL = null;
 	public static String DEL_URL = "http://www.tumblr.com/api/delete";
 	public UserContext uCtx;
 	
 	public Connector(UserContext uCtx)
 	{
 		this.uCtx = uCtx;
-		GET_URL = "http://" + uCtx.name + ".tumblr.com/api/read";
+		GET_URL = uCtx.hostURL + "/api/read";
 	}
 	
 	public boolean makeNewPost(Post p) throws Exception
@@ -75,21 +75,21 @@ public class Connector
         {
         	client.getConnectionManager().shutdown();
         	int callNo = 2;
-            while (callNo < 10)
+            while (callNo < 30)
             {
             	client = new DefaultHttpClient();
             	response = client.execute(httpget);
             	if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {break;}
             	callNo++;
             }
-            System.out.println("Poszlo za: " + callNo + " razem...");
+            System.out.println("Get all posts retrieved by: " + callNo + " times...");
         }
 
         int status = response.getStatusLine().getStatusCode();
         
         if (status != HttpStatus.SC_OK)
         {
-        	System.out.println("Serwis niedostępny => " + status);
+        	System.out.println("Service unavailable => " + status);
         }
         
         HttpEntity entity = response.getEntity();

@@ -2,12 +2,12 @@ package com.tumblr.model;
 
 public class UserContext {
 
-	public String name, email, password;
-	public UserContext(String name, String email, String password)
+	public String hostURL, email, password;
+	public UserContext(String hostURL, String email, String password)
 	{
-		this.name = name;
+		this.hostURL = hostURL;
 		this.password = password;
 		this.email = email;
 	}
-	public boolean isValid() {return name != null && password != null && email != null;}
+	public boolean isValid() {return hostURL != null && password != null && email != null;}
 }
