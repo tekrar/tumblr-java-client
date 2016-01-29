@@ -1,0 +1,1 @@
+Java wrapper for a tumblr service API and a swing component allowing to maintain tumblr posts.
